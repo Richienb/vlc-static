@@ -1,13 +1,9 @@
 const test = require("ava")
-const theModule = require(".")
+const fs = require("fs")
+const vlcStatic = require(".")
 
 test("main", (t) => {
-	t.throws(() => {
-		theModule(123)
-	}, {
-		instanceOf: TypeError,
-		message: "Expected a string, got number",
-	})
-
-	t.is(theModule("unicorns"), "unicorns & rainbows")
+	const binaryPath = vlcStatic()
+	t.is(typeof binaryPath, "string")
+	t.true(fs.existsSync(binaryPath))
 })

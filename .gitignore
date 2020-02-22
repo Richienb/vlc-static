@@ -1,3 +1,7 @@
+# Automatically generated
+
+bin/*
+
 # Visual Studio Code
 
 .vscode/*

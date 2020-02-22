@@ -1,41 +1,24 @@
-# The module [![Travis CI Build Status](https://img.shields.io/travis/com/Richienb/the-module/master.svg?style=for-the-badge)](https://travis-ci.com/Richienb/the-module)
+# VLC Static [![Travis CI Build Status](https://img.shields.io/travis/com/Richienb/vlc-static/master.svg?style=for-the-badge)](https://travis-ci.com/Richienb/vlc-static)
 
-My awesome module.
+Static VLC binaries for Windows, MacOS and Linux.
 
-[![NPM Badge](https://nodei.co/npm/the-module.png)](https://npmjs.com/package/the-module)
+[![NPM Badge](https://nodei.co/npm/vlc-static.png)](https://npmjs.com/package/vlc-static)
 
 ## Install
 
 ```sh
-npm install the-module
+npm install vlc-static
 ```
 
 ## Usage
 
 ```js
-const theModule = require("the-module");
+const vlcStatic = require("vlc-static");
 
-theModule("unicorns");
-//=> 'unicorns & rainbows'
+vlcStatic();
+//=> 'C:\\Users\\richi\\Documents\\GitHub\\vlc-static\\bin\\win64\\vlc.exe'
 ```
 
 ## API
 
-### theModule(input, options?)
-
-#### input
-
-Type: `string`
-
-Lorem ipsum.
-
-#### options
-
-Type: `object`
-
-##### postfix
-
-Type: `string`\
-Default: `rainbows`
-
-Lorem ipsum.
+### vlcStatic()

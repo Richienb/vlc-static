@@ -1,14 +1,13 @@
 /**
- * My awesome module.
- * @param input Lorem ipsum.
- * @param postfix Lorem ipsum.
+ * Static VLC binaries for Windows, MacOS and Linux.
  * @example
  * ```
- * const theModule = require("the-module");
- * theModule("unicorns");
- * //=> 'unicorns & rainbows'
+ * const vlcStatic = require("vlc-static");
+ *
+ * vlcStatic();
+ * //=> 'C:\\Users\\richi\\Documents\\GitHub\\vlc-static\\bin\\win64\\vlc.exe'
  * ```
 */
-declare function theModule(input: string, { postfix }: { postfix?: string }): string;
+declare function vlcStatic(): string
 
-export = theModule;
+export = vlcStatic
