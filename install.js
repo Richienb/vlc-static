@@ -1,5 +1,6 @@
 const download = require("download")
 const which = require("which")
+const pathExists = require("path-exists")
 
 const boxen = require("boxen")
 const chalk = require("chalk")
@@ -14,14 +15,19 @@ const urls = {
 	arm64: "http://people.videolan.org/~jb/Builds/ARM/vlc-4.0.0-dev-20180508-aarch64.zip",
 }
 
+async function downloadFile(url, destination) {
+	if (await pathExists(destination)) return
+	return download(url, destination, { extract: true })
+}
+
 module.exports = (async () => {
 	if (platform === "win32") {
-		if (arch === "x64") return download(urls.win64, "bin/win64", { extract: true })
-		if (arch === "ia32") return download(urls.win32, "bin/win32", { extract: true })
-		return download(urls.arm64, "bin/arm64", { extract: true })
+		if (arch === "x64") return downloadFile(urls.win64, "bin/win64")
+		if (arch === "ia32") return downloadFile(urls.win32, "bin/win32")
+		if (arch === "arm64") return downloadFile(urls.arm64, "bin/arm64")
 	}
 
-	const resolved = which.sync("vlc")
+	const resolved = which.sync("vlc", { nothrow: true })
 	if (resolved) return
 
 	let message = `Unable to find a suitable VLC binary for you current OS. Please ${terminalLink("install VLC", "https://www.videolan.org/vlc/#download")}.`
