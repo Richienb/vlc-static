@@ -6,7 +6,7 @@ const which = require("which")
 
 const { arch, platform } = process
 
-const resolve = (pattern) => path.resolve(globby.sync(pattern)[0])
+const resolve = (pattern) => path.resolve(__dirname, globby.sync(pattern, { cwd: __dirname })[0])
 
 module.exports = () => {
 	if (platform === "win32") {
@@ -24,7 +24,7 @@ module.exports = () => {
 
 	let message = "Unable to find a suitable VLC binary for you current OS. Please install VLC."
 	if (platform === "linux") message = "Unable to find a suitable VLC binary for Linux. If you have snapcraft installed, run `sudo snap install vlc`."
-	if (platform === "darwin") message = `Unable to find a suitable VLC binary for MacOS. Please install VLC.`
+	if (platform === "darwin") message = "Unable to find a suitable VLC binary for MacOS. Please install VLC."
 
 	throw new Error(message)
 }
