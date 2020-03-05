@@ -40,8 +40,8 @@ module.exports = (async () => {
 	if (resolved) return
 
 	let message = `Unable to find a suitable VLC binary for you current OS. Please ${terminalLink("install VLC", "https://www.videolan.org/vlc/#download")}.`
-	if (platform === "linux") message = `Unable to find a suitable VLC binary for Linux. If you have snapcraft installed, run ${chalk.grey("sudo snap install vlc")}.`
-	if (platform === "darwin") message = `Unable to find a suitable VLC binary for MacOS. Please ${terminalLink("install VLC", "https://www.videolan.org/vlc/download-macosx.html")}.`
+	if (platform === "linux") message = `Unable to find a suitable VLC binary for Linux. If you have snapcraft installed, run ${terminalLink(chalk.grey("sudo snap install vlc"), "snap://vlc", { fallback: false })}.`
+	if (platform === "darwin") message = `Unable to find a suitable VLC binary for MacOS.Please ${terminalLink("install VLC", "https://www.videolan.org/vlc/download-macosx.html")}.`
 
 	return console.log(boxen(message, { padding: 1, borderColor: "yellow" }))
 })()
