@@ -15,10 +15,6 @@ module.exports = () => {
 		return resolve("./bin/arm64/*/vlc.exe")
 	}
 
-	if (platform === "darwin") {
-		return resolve("./bin/darwin/vlc")
-	}
-
 	const resolved = which.sync("vlc", { nothrow: true })
 	if (resolved) return resolved
 
