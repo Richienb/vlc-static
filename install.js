@@ -27,7 +27,7 @@ module.exports = (async () => {
 		if (arch === "arm64") return downloadFile(urls.arm64, "bin/arm64")
 	}
 
-	const resolved = which.sync("vlc", { nothrow: true })
+	const resolved = await which("vlc", { nothrow: true })
 	if (resolved) return
 
 	let message = `Unable to find a suitable VLC binary for you current OS. Please ${terminalLink("install VLC", "https://www.videolan.org/vlc/#download")}.`

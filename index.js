@@ -19,7 +19,7 @@ module.exports = () => {
 		return resolve("./bin/darwin/vlc")
 	}
 
-	const resolved = which.sync("vlc")
+	const resolved = which.sync("vlc", { nothrow: true })
 	if (resolved) return resolved
 
 	let message = "Unable to find a suitable VLC binary for you current OS. Please install VLC."
