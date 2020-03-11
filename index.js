@@ -10,9 +10,9 @@ const resolve = (pattern) => path.resolve(__dirname, globby.sync(pattern, { cwd:
 
 module.exports = () => {
 	if (platform === "win32") {
-		if (arch === "x64") return resolve("./bin/win64/*/vlc.exe")
-		if (arch === "ia32") return resolve("./bin/win32/*/vlc.exe")
-		return resolve("./bin/arm64/*/vlc.exe")
+		if (arch === "x64") return resolve("./bin/windows/x64/*/vlc.exe")
+		if (arch === "ia32") return resolve("./bin/windows/ia32/*/vlc.exe")
+		return resolve("./bin/windows/arm64/*/vlc.exe")
 	}
 
 	if (platform === "darwin") {
