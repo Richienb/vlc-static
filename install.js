@@ -65,5 +65,5 @@ module.exports = (async () => {
 		message = `Unable to find a suitable VLC binary for MacOS. Please ${terminalLink("install VLC", "https://www.videolan.org/vlc/download-macosx.html")}.`
 	}
 
-	return console.log(boxen(message, { padding: 1, borderColor: "yellow" }))
+	return console.log(boxen(message, { padding: 1, borderColor: "yellow", borderStyle: "round" }))
 })()
