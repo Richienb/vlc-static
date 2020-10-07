@@ -13,8 +13,8 @@ const { arch, platform } = process
 // For updating these urls, see CONTRIBUTING.md.
 const urls = {
 	windows: {
-		x64: "https://download.videolan.org/pub/videolan/vlc/3.0.10/win64/vlc-3.0.10-win64.zip",
-		ia32: "https://download.videolan.org/pub/videolan/vlc/3.0.10/win32/vlc-3.0.10-win32.zip",
+		x64: "https://download.videolan.org/pub/videolan/vlc/3.0.11/win64/vlc-3.0.11-win64.zip",
+		ia32: "https://download.videolan.org/pub/videolan/vlc/3.0.11/win32/vlc-3.0.11-win32.zip",
 		arm64: "http://people.videolan.org/~jb/Builds/ARM/vlc-4.0.0-dev-20180508-aarch64.zip"
 	}
 }
