@@ -35,7 +35,6 @@
 		"boxen": "^4.2.0",
 		"chalk": "^4.0.0",
 		"download": "^8.0.0",
-		"extract-dmg": "^1.0.0",
 		"globby": "^11.0.0",
 		"path-exists": "^4.0.0",
 		"terminal-link": "^2.1.1",
