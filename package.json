@@ -1,6 +1,6 @@
 {
 	"name": "vlc-static",
-	"version": "1.0.3",
+	"version": "1.0.4",
 	"description": "Static VLC binaries for Windows, MacOS and Linux.",
 	"repository": "https://github.com/Richienb/vlc-static.git",
 	"author": "Richie Bendall <richiebendall@gmail.com>",
