@@ -31,16 +31,8 @@ async function downloadFile(url, destination) {
 
 (async () => {
 	if (platform === 'win32') {
-		if (arch === 'x64') {
-			return downloadFile(urls.windows.x64, 'bin/windows/x64');
-		}
-
-		if (arch === 'ia32') {
-			return downloadFile(urls.windows.ia32, 'bin/windows/ia32');
-		}
-
-		if (arch === 'arm64') {
-			return downloadFile(urls.windows.arm64, 'bin/windows/arm64');
+		if (urls.windows[arch]) {
+			return downloadFile(urls.windows[arch], `bin/windows/${arch}`);
 		}
 	}
 
