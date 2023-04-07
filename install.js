@@ -31,7 +31,9 @@ async function downloadFile(url, destination) {
 
 (async () => {
 	if (platform === 'win32') {
-		if(urls.windows[arch]) return downloadFile(urls.windows[arch], `bin/windows/${arch}`);
+		if (urls.windows[arch]) {
+			return downloadFile(urls.windows[arch], `bin/windows/${arch}`);
+		}
 	}
 
 	const resolved = await which('vlc', {nothrow: true});
